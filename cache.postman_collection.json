@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "cache",
+		"_postman_id": "ebedf6b7-3ffe-d44a-db2b-a86d2b15ca88",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1,\n    \"firstName\":\"Gaurav\",\n    \"lastName\":\"Amritkar\",\n    \"emailId\":\"gaurav@gmail.com\",\n    \"age\":32\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user/1",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
