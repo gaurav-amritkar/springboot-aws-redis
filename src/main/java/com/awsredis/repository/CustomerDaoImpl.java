@@ -1,6 +1,6 @@
 package com.awsredis.repository;
 
-import com.awsredis.model.User;
+import com.awsredis.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -8,17 +8,17 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao {
+public class CustomerDaoImpl implements CustomerDao {
 
     @Autowired
     private RedisTemplate redisTemplate;
 
-    private static final String KEY = "USER";
+    private static final String KEY = "CUSTOMER";
 
     @Override
-    public boolean saveUser(User user) {
+    public boolean saveCustomer(Customer customer) {
         try {
-            redisTemplate.opsForHash().put(KEY, user.getId().toString(), user);
+            redisTemplate.opsForHash().put(KEY, customer.getCustId().toString(), customer);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -27,21 +27,21 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> fetchAllUser() {
-        List<User> users;
-        users = redisTemplate.opsForHash().values(KEY);
-        return  users;
+    public List<Customer> fetchAllCustomer() {
+        List<Customer> customers;
+        customers = redisTemplate.opsForHash().values(KEY);
+        return  customers;
     }
 
     @Override
-    public User fetchUserById(Long id) {
-        User user;
-        user = (User) redisTemplate.opsForHash().get(KEY,id.toString());
-        return user;
+    public Customer fetchCustomerById(Long id) {
+        Customer customer;
+        customer = (Customer) redisTemplate.opsForHash().get(KEY,id.toString());
+        return customer;
     }
 
     @Override
-    public boolean deleteUser(Long id) {
+    public boolean deleteCustomer(Long id) {
         try {
             redisTemplate.opsForHash().delete(KEY,id.toString());
             return true;
@@ -52,9 +52,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateUser(Long id, User user) {
+    public boolean updateCustomer(Long id, Customer customer) {
         try {
-            redisTemplate.opsForHash().put(KEY, id, user);
+            redisTemplate.opsForHash().put(KEY, id, customer);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

@@ -21,7 +21,27 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":1,\n    \"firstName\":\"Gaurav\",\n    \"lastName\":\"Amritkar\",\n    \"emailId\":\"gaurav@gmail.com\",\n    \"age\":32\n}"
+					"raw": "{\n\t\"id\":1,\n    \"firstName\":\"JohnUser\",\n    \"lastName\":\"Doe\",\n    \"emailId\":\"john@gmail.com\",\n    \"age\":30\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"custId\":1,\n    \"custFirstName\":\"JohnCustomer\",\n    \"custLastName\":\"Doe\",\n    \"custEmailId\":\"john@gmail.com\",\n    \"custAge\":30\n}"
 				},
 				"description": ""
 			},
@@ -39,9 +59,31 @@
 			"response": []
 		},
 		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user/1",
 			"request": {
 				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/user/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer/1",
+			"request": {
+				"url": "http://ec2-54-84-246-96.compute-1.amazonaws.com:8080/customer/1",
 				"method": "DELETE",
 				"header": [],
 				"body": {},
